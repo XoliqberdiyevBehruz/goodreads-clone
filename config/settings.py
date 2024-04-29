@@ -82,7 +82,7 @@ DATABASES = {
         'HOST':"127.0.0.1",
         "PORT":"5432",
         "USER":"postgres",
-        'PASSWORD':"20090912"
+        'PASSWORD':""
     }
 }
 
@@ -149,7 +149,7 @@ LOGIN_URL = 'users:login'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'xoliqberdiyevbehruz6@gmail.com'
-# EMAIL_HOST_PASSWORD = '20090912'
+# EMAIL_HOST_USER = '@gmail.com'
+# EMAIL_HOST_PASSWORD = ''
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
