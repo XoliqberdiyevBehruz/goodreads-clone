@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+
+<h1>Profile</h1>
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
+    <div class="card p-4"> 
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+            <button class="btn btn-secondary"> 
+                <img src="{{ user.image.url }}" alt="" class="profile-pic">
+            </button>
+            <span class="name mt-3">{{user.first_name}} {{user.last_name}}</span> 
+            <span class="idd">@{{user.username}}</span> 
+            <span class="idd">{{user.email}}</span> 
+            <div class=" d-flex mt-2"> 
+                <a class="btn1 btn-dark" href="{% url 'users:profile-edit' %}">Edit Profile</a> 
+            </div> 
+            <div class=" px-2 rounded mt-4 date "> 
+                <span class="join">{{user.data_joined}}</span> 
+            </div> 
+        </div> 
+    </div>
+</div>
+<!-- <div>
+    
+</div>
+<p>Username:{{user.username}}</p>
+<p>First Name:{{user.first_name}}</p>
+<p>Last Name:{{user.last_name}}</p>
+<p>Email:{{user.email}}</p> -->
+
+{% endblock %}
