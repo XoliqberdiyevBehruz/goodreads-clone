@@ -4,8 +4,9 @@ from django.urls import reverse
 from books.models import Book
 from users.models import CustomUser
 
+
 class BookTestCase(TestCase):
-    def test_no_book(self):        
+    def test_no_book(self):
         response = self.client.get(reverse('books:list'))
 
         self.assertContains(response, 'No found book')
@@ -33,16 +34,10 @@ class BookTestCase(TestCase):
         self.assertNotContains(response, book2)
         self.assertNotContains(response, book3)
 
-    
     def test_book_detail(self):
         book = Book.objects.create(title='book1', description='book1', isbn='123456789')
 
-        response = self.client.get(reverse('books:detail', kwargs={'id':book.id}))
+        response = self.client.get(reverse('books:detail', kwargs={'id': book.id}))
 
         self.assertContains(response, book.title)
         self.assertContains(response, book.description)
-
-
-
-
-
